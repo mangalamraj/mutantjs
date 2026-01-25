@@ -16,7 +16,7 @@ export default function Home() {
         <p>APOCALYPTIC</p>
       </span>
       <div className="absolute  z-1 left-0 right-0">
-        <p className="w-full text-center text-8xl md:text-[168px] font-extrabold text-gray-200 -tracking-[0.06em] ">
+        <p className="w-full text-center text-8xl md:text-[168px] font-extrabold text-gray-200 -tracking-[0.06em] leading-20 md:leading-60">
           THE <span className="text-red-600 text-shadow-2xs ">MUTANT</span>
         </p>
       </div>
