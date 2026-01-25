@@ -15,17 +15,15 @@ export default function Home() {
         <p>RUTHLESS</p>
         <p>APOCALYPTIC</p>
       </span>
-
       <div className="absolute  z-1 left-0 right-0">
-        <p className="w-full text-center text-[168px] font-extrabold text-gray-200 -tracking-[0.06em]">
+        <p className="w-full text-center text-8xl md:text-[168px] font-extrabold text-gray-200 -tracking-[0.06em] ">
           THE <span className="text-red-600 text-shadow-2xs ">MUTANT</span>
         </p>
       </div>
-
       <Canvas className="z-2 cursor-pointer">
         <Mutant />
       </Canvas>
-      <div className="absolute bottom-10 w-full">
+      <div className="absolute bottom-4 md:bottom-10 w-full">
         <MarqueeComponent />
       </div>
     </div>
