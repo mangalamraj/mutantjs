@@ -5,8 +5,8 @@ import MarqueeComponent from "./components/marquee";
 
 export default function Home() {
   return (
-    <div className="relative bg-black w-screen h-screen text-white overflow-hidden">
-      <span className="absolute h-full top-1/2 ml-8 text-xs font-extrabold cursor-pointer">
+    <div className="relative bg-black w-screen h-screen text-gray-200 overflow-hidden">
+      <span className="absolute h-full top-1/2 ml-8  text-xs font-extrabold cursor-pointer">
         <p>SAVAGE</p>
         <p>UNSTOPPABLE</p>
       </span>
@@ -16,7 +16,7 @@ export default function Home() {
         <p>APOCALYPTIC</p>
       </span>
       <div className="absolute  z-1 left-0 right-0">
-        <p className="w-full text-center text-8xl md:text-[168px] font-extrabold text-gray-200 -tracking-[0.06em] leading-20 md:leading-60">
+        <p className="w-full text-center text-8xl md:text-[168px] font-[1000] text-gray-300 -tracking-[0.06em] leading-20 md:leading-60">
           THE <span className="text-red-600 text-shadow-2xs ">MUTANT</span>
         </p>
       </div>

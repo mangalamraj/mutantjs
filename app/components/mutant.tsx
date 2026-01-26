@@ -3,21 +3,38 @@ import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 
 const Mutant = () => {
-  const model = useGLTF("/model/mutant.glb");
-  const { animations, scene } = useGLTF("/model/mutant.glb");
+  const { scene, animations } = useGLTF("/model/mutant.glb");
   const { actions } = useAnimations(animations, scene);
-  console.log(model.animations);
 
-  useThree(({ camera, scene, gl }) => {
-    camera.position.z = 1.6;
+  useThree(({ camera }) => {
+    camera.position.set(0, 0, 1.6);
   });
+
   useEffect(() => {
-    actions[animations[0]?.name]?.play();
-  }, []);
+    if (!animations.length) return;
+
+    const action = actions[animations[0].name];
+    if (!action) return;
+
+    action.reset();
+    action.paused = true;
+
+    const timer = setTimeout(() => {
+      action.paused = false;
+      action.timeScale = 0.6;
+      action.play();
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [actions, animations]);
+
   return (
     <>
-      <primitive object={model.scene} position={[0, -0.9, 0]} />
-      <directionalLight position={[0, 5, 5]} color={0xffffff} intensity={4} />
+      <primitive object={scene} position={[0, -0.9, 0]} />
+
+      <directionalLight position={[0, 5, 5]} intensity={4} />
+      <ambientLight intensity={0.4} />
+
       <OrbitControls
         enableZoom={false}
         enablePan={false}
@@ -27,5 +44,7 @@ const Mutant = () => {
     </>
   );
 };
+
+useGLTF.preload("/model/mutant.glb");
 
 export default Mutant;
