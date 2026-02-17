@@ -17,7 +17,6 @@ const Mutant = () => {
     if (!action) return;
 
     action.reset();
-    action.paused = true;
 
     const timer = setTimeout(() => {
       action.paused = false;
